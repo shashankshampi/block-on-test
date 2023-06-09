@@ -1,0 +1,30 @@
+{
+  "pattern": [
+    {
+      "type": "NOTHING_FOR",
+      "duration": 0
+    },
+    {
+      "type": "AT_ONCE_USERS",
+      "users": 0
+    },
+    {
+      "type": "RAMP_USERS",
+      "users": 0,
+      "duration": 0
+    },
+    {
+      "type": "CONSTANT_USERS_PER_SEC",
+      "users": 1,
+      "duration": 1,
+      "randomized": true
+    },
+    {
+      "type": "RAMP_USERS_PER_SEC",
+      "users": 0,
+      "toUser": 0,
+      "duration": 0,
+      "randomized": true
+    }
+  ]
+}

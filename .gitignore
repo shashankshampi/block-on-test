@@ -1,0 +1,20 @@
+*.class
+*.db
+*.iml
+Thumbs.db
+.DS_Store
+logs/
+
+###################### Eclipse ######################
+
+*.pydevproject
+.project
+.metadata
+.classpath
+.settings/
+.loadpath
+.vscode
+.metals
+
+###################### Intellij Idea ######################
+
