@@ -22,9 +22,9 @@ jobs:
         run: java -version
 
       - name: Install Maven
-        run: |
+        run:  mvn --version
 #          sudo apt-get install -y maven=3.6.3-1~18.04.1
-          mvn --version
+
 
       - name: Install Go
         uses: actions/setup-go@v2
