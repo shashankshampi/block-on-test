@@ -13,8 +13,13 @@ logs/
 .classpath
 .settings/
 .loadpath
-.vscode
-.metals
 
 ###################### Intellij Idea ######################
+.html
+.idea/
+.idea/compiler.xml
+############ Common #########
+*.sync
+target/
+/reports/
 
