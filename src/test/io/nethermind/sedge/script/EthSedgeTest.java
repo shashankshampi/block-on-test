@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
  */
 
 
-public class EthSedgeTest extends BaseTests {
+public class EthSedgeTest extends io.nethermind.sedge.script.BaseTests {
 
     private static final Logger logger = Logger.getLogger(EthSedgeTest.class.getName());
     EthHelper ethHelper = new EthHelper();
@@ -69,7 +69,6 @@ public class EthSedgeTest extends BaseTests {
         EthSyncing ethSyncing = ethHelper.ethSyncObject(sTestContext);
         Response response = RestUtils.post(requestSpecBuilder,null,"",ethSyncing);
         responseValidator.validateEthChainId(response,softAssert);
-//        softAssert.fail();
         softAssert.assertAll();
     }
 
