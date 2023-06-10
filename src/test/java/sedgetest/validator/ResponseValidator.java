@@ -24,6 +24,7 @@ public class ResponseValidator {
   public void validateEthGetBlockByNumber(Response response, SoftAssert softAssert) {
     EthGetBlockByNumberRes ethGetBlockByNumberRes = response.as(EthGetBlockByNumberRes.class);
     softAssert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK, "validating status code " + HttpStatus.SC_OK);
+
     softAssert.assertNotNull(ethGetBlockByNumberRes.getResult(), "validating block result in not empty");
 
     softAssert.assertNotNull(ethGetBlockByNumberRes.getResult().getAuthor(), "validating value getAuthor");
@@ -59,5 +60,12 @@ public class ResponseValidator {
     softAssert.assertNotNull(ethGetBlockByNumberRes.getResult().getUncles(), "validating value getUncles");
     softAssert.assertNotNull(ethGetBlockByNumberRes.getResult().getWithdrawals(), "validating value getWithdrawals");
     softAssert.assertNotNull(ethGetBlockByNumberRes.getResult().getWithdrawalsRoot(), "validating value getWithdrawalsRoot");
+  }
+
+  public void validateEthChainId(Response response, SoftAssert softAssert) {
+    EthSyncingRes ethChainId = response.as(EthSyncingRes.class);
+    softAssert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK, "validating status code " + HttpStatus.SC_OK);
+    softAssert.assertNotNull(ethChainId.getResult(), "validating result not null");
+
   }
 }

@@ -12,7 +12,7 @@ import io.nethermind.utils.LoadInjections
 class SedgeSimulation extends Simulation {
 
   var headers = Map(
-    "Content-Type" -> "application/json",
+    "Content-Type" -> "application/json"
   )
 
   val httpProtocol = http
@@ -22,7 +22,7 @@ class SedgeSimulation extends Simulation {
 
   var testSetup =
     setUp(
-      ethSyncing.inject(LoadInjections.getOpenModelFromJson),
+//      ethSyncing.inject(LoadInjections.getOpenModelFromJson),
       ethBlockNumber.inject(LoadInjections.getOpenModelFromJson)
     ).protocols(httpProtocol)
 }

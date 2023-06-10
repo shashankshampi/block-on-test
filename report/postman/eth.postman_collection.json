@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "a2cd9810-6600-4bc0-94dc-73b6dfe552e2",
+		"name": "eth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20600295"
+	},
+	"item": [
+		{
+			"name": "eth_syncing",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"method\": \"eth_syncing\",\n    \"params\": [],\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8545",
+					"host": [
+						"localhost"
+					],
+					"port": "8545"
+				}
+			},
+			"response": [
+				{
+					"name": "eth_syncing",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"eth_syncing\",\n    \"params\": [],\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8545",
+							"host": [
+								"localhost"
+							],
+							"port": "8545"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jun 2023 15:54:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jsonrpc\": \"2.0\",\n    \"result\": false,\n    \"id\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "eth_blockNumber",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"method\": \"eth_blockNumber\",\n    \"params\": [],\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8545",
+					"host": [
+						"localhost"
+					],
+					"port": "8545"
+				}
+			},
+			"response": [
+				{
+					"name": "eth_blockNumber",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"eth_blockNumber\",\n    \"params\": [],\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8545",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8545"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jun 2023 15:49:22 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jsonrpc\": \"2.0\",\n    \"result\": \"0x430032\",\n    \"id\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "eth_getBlockByNumber",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"method\": \"eth_getBlockByNumber\",\n    \"params\": [\"0x0\", true\n    ],\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8545",
+					"host": [
+						"localhost"
+					],
+					"port": "8545"
+				}
+			},
+			"response": [
+				{
+					"name": "eth_getBlockByNumber",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"eth_getBlockByNumber\",\n    \"params\": [\n        \"0x430032\",\n        true\n    ],\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8545",
+							"host": [
+								"localhost"
+							],
+							"port": "8545"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jun 2023 15:49:35 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jsonrpc\": \"2.0\",\n    \"result\": {\n        \"author\": \"0x88dfc82cf71fdeb23f82c33a202f6e2d19ac0541\",\n        \"difficulty\": \"0x0\",\n        \"extraData\": \"0x4e65746865726d696e64\",\n        \"gasLimit\": \"0x1c9c380\",\n        \"gasUsed\": \"0x0\",\n        \"hash\": \"0x2a9adf1158f151efb7a1c22cbf89af825663e3a5376f981ff39585ad1622b0e8\",\n        \"logsBloom\": \"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\",\n        \"miner\": \"0x88dfc82cf71fdeb23f82c33a202f6e2d19ac0541\",\n        \"mixHash\": \"0xf53da949c3d91ec4a135152837c3244f0a12fdd0de4b0c220094073173b88733\",\n        \"nonce\": \"0x0000000000000000\",\n        \"number\": \"0x430032\",\n        \"parentHash\": \"0x4eccf02f63fcfae41dbeb85d2b15ddf746ad171e3599474d7cd4fb1d6dd46583\",\n        \"receiptsRoot\": \"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\n        \"sha3Uncles\": \"0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347\",\n        \"size\": \"0x337\",\n        \"stateRoot\": \"0x1e7fdc027a46735ef9253cb1bde79131dac924e6b210eb6a70fccbc05ec5d930\",\n        \"totalDifficulty\": \"0xa63e0ffffffffffffffffffffffffec169144\",\n        \"timestamp\": \"0x64849b80\",\n        \"baseFeePerGas\": \"0x7\",\n        \"transactions\": [],\n        \"transactionsRoot\": \"0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421\",\n        \"uncles\": [],\n        \"withdrawals\": [\n            {\n                \"index\": \"0x235100\",\n                \"validatorIndex\": \"0x162\",\n                \"address\": \"0xcc4e00a72d871d6c328bcfe9025ad93d0a26df51\",\n                \"amount\": \"0x3ce948\"\n            },\n            {\n                \"index\": \"0x235101\",\n                \"validatorIndex\": \"0x163\",\n                \"address\": \"0xcc4e00a72d871d6c328bcfe9025ad93d0a26df51\",\n                \"amount\": \"0x15fa01\"\n            },\n            {\n                \"index\": \"0x235102\",\n                \"validatorIndex\": \"0x164\",\n                \"address\": \"0xcc4e00a72d871d6c328bcfe9025ad93d0a26df51\",\n                \"amount\": \"0x15fa01\"\n            },\n            {\n                \"index\": \"0x235103\",\n                \"validatorIndex\": \"0x165\",\n                \"address\": \"0xcc4e00a72d871d6c328bcfe9025ad93d0a26df51\",\n                \"amount\": \"0x15fa01\"\n            },\n            {\n                \"index\": \"0x235104\",\n                \"validatorIndex\": \"0x166\",\n                \"address\": \"0xcc4e00a72d871d6c328bcfe9025ad93d0a26df51\",\n                \"amount\": \"0x15fa01\"\n            },\n            {\n                \"index\": \"0x235105\",\n                \"validatorIndex\": \"0x167\",\n                \"address\": \"0xcc4e00a72d871d6c328bcfe9025ad93d0a26df51\",\n                \"amount\": \"0x15fa01\"\n            },\n            {\n                \"index\": \"0x235106\",\n                \"validatorIndex\": \"0x168\",\n                \"address\": \"0xcc4e00a72d871d6c328bcfe9025ad93d0a26df51\",\n                \"amount\": \"0x3cc398\"\n            },\n            {\n                \"index\": \"0x235107\",\n                \"validatorIndex\": \"0x169\",\n                \"address\": \"0xcc4e00a72d871d6c328bcfe9025ad93d0a26df51\",\n                \"amount\": \"0x15fa01\"\n            }\n        ],\n        \"withdrawalsRoot\": \"0x1a0d7e7d5b72d3015c518d60ac3c968f1fbb0d16d6cf56a78a764293ff73bdb5\"\n    },\n    \"id\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "eth_chainId",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"method\": \"eth_chainId\",\n    \"params\": [],\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8545",
+					"host": [
+						"localhost"
+					],
+					"port": "8545"
+				}
+			},
+			"response": [
+				{
+					"name": "eth_chainId",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"method\": \"eth_chainId\",\n    \"params\": [],\n    \"id\": 1,\n    \"jsonrpc\": \"2.0\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8545",
+							"host": [
+								"localhost"
+							],
+							"port": "8545"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jun 2023 17:59:27 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jsonrpc\": \"2.0\",\n    \"result\": \"0x27d8\",\n    \"id\": 1\n}"
+				}
+			]
+		}
+	]
+}

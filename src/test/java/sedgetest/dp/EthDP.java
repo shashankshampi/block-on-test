@@ -34,4 +34,15 @@ public class EthDP {
     return new Object[][]{{sTestContext}};
   }
 
+  @DataProvider(name = "eth_chainId")
+  public Object[][] eth_chainId() {
+    Map<String, Object> sTestContext = new HashMap<>();
+    List<Object> list = new ArrayList<>();
+    sTestContext.put("method", "eth_chainId");
+    sTestContext.put("params", list);
+    sTestContext.put("id", "1");
+    sTestContext.put("jsonrpc", "2.0");
+    return new Object[][]{{sTestContext}};
+  }
+
 }

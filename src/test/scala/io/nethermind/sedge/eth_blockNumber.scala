@@ -7,9 +7,9 @@ import io.nethermind.feeders.Feeders
 object eth_blockNumber {
 
   def ethBlockNumber = {
-    scenario("Test 1: JSON-RPC verification")
+    scenario("Test 2: JSON-RPC Benchmark")
 //      .feed(Feeders.datafile)
-      .exec(http("eth_blockNumber")
+/*      .exec(http("eth_blockNumber")
         .post("/")
         .body(StringBody(
           """{
@@ -20,7 +20,7 @@ object eth_blockNumber {
             |}""".stripMargin))
         .asJson
         .check(jsonPath("$.result").exists)
-        .check(jsonPath("$.error").notExists))
+        .check(jsonPath("$.error").notExists))*/
 
 //      .pause(1) // Add a pause between requests
 
@@ -29,7 +29,9 @@ object eth_blockNumber {
         .body(StringBody(
           """{
             |    "method": "eth_getBlockByNumber",
-            |    "params": [{}, true
+            |        "params": [
+            |        "0x430032",
+            |        true
             |    ],
             |    "id": 1,
             |    "jsonrpc": "2.0"

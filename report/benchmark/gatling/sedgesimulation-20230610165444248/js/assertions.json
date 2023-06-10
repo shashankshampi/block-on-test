@@ -1,0 +1,10 @@
+{
+  "simulation": "io.nethermind.simulations.SedgeSimulation",
+  "simulationId": "sedgesimulation",
+  "start": 1686416084248,
+  "description": "",
+  "scenarios": ["Test 1: JSON-RPC verification"],
+  "assertions": [
+
+  ]
+}

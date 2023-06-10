@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-06-10T23:45:53 IST" name="Test 1 and Test 3: JSON-RPC verification" finished-at="2023-06-10T23:45:54 IST" duration-ms="839">
+    <groups>
+      <group name="functional">
+        <method signature="EthSedgeTest.eth_syncing_test(java.util.Map)[pri:0, instance:sedgetest.script.EthSedgeTest@5fbe4146]" name="eth_syncing_test" class="sedgetest.script.EthSedgeTest"/>
+        <method signature="EthSedgeTest.eth_blockNumber_test(java.util.Map)[pri:1, instance:sedgetest.script.EthSedgeTest@5fbe4146]" name="eth_blockNumber_test" class="sedgetest.script.EthSedgeTest"/>
+        <method signature="EthSedgeTest.eth_chainId_test(java.util.Map)[pri:3, instance:sedgetest.script.EthSedgeTest@5fbe4146]" name="eth_chainId_test" class="sedgetest.script.EthSedgeTest"/>
+      </group> <!-- functional -->
+    </groups>
+    <test started-at="2023-06-10T23:45:53 IST" name="Sedge API Integration with Sanity Test" finished-at="2023-06-10T23:45:54 IST" duration-ms="839">
+      <class name="sedgetest.script.EthSedgeTest">
+        <test-method is-config="true" signature="initSuits()[pri:0, instance:sedgetest.script.EthSedgeTest@5fbe4146]" started-at="2023-06-10T23:45:53 IST" name="initSuits" finished-at="2023-06-10T23:45:53 IST" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initSuits -->
+        <test-method is-config="true" signature="intiBefore()[pri:0, instance:sedgetest.script.EthSedgeTest@5fbe4146]" started-at="2023-06-10T23:45:53 IST" name="intiBefore" finished-at="2023-06-10T23:45:53 IST" duration-ms="308" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intiBefore -->
+        <test-method signature="eth_syncing_test(java.util.Map)[pri:0, instance:sedgetest.script.EthSedgeTest@5fbe4146]" started-at="2023-06-10T23:45:53 IST" name="eth_syncing_test" description="Ensure client synchronization completed: Verify eth_syncing Data" data-provider="eth_syncing" finished-at="2023-06-10T23:45:54 IST" duration-ms="473" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{id=1, method=eth_syncing, params=[], jsonrpc=2.0}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eth_syncing_test -->
+        <test-method is-config="true" signature="intiBefore()[pri:0, instance:sedgetest.script.EthSedgeTest@5fbe4146]" started-at="2023-06-10T23:45:54 IST" name="intiBefore" finished-at="2023-06-10T23:45:54 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intiBefore -->
+        <test-method signature="eth_blockNumber_test(java.util.Map)[pri:1, instance:sedgetest.script.EthSedgeTest@5fbe4146]" started-at="2023-06-10T23:45:54 IST" name="eth_blockNumber_test" description="Test 1: Verify eth_blockNumber Data" data-provider="eth_blockNumber" finished-at="2023-06-10T23:45:54 IST" duration-ms="31" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{id=1, method=eth_blockNumber, params=[], jsonrpc=2.0}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eth_blockNumber_test -->
+        <test-method is-config="true" signature="intiBefore()[pri:0, instance:sedgetest.script.EthSedgeTest@5fbe4146]" started-at="2023-06-10T23:45:54 IST" name="intiBefore" finished-at="2023-06-10T23:45:54 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- intiBefore -->
+        <test-method signature="eth_chainId_test(java.util.Map)[pri:3, instance:sedgetest.script.EthSedgeTest@5fbe4146]" started-at="2023-06-10T23:45:54 IST" name="eth_chainId_test" description="Test 3: Additional additional scenarios to get eth_chainId " data-provider="eth_syncing" finished-at="2023-06-10T23:45:54 IST" duration-ms="10" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{id=1, method=eth_syncing, params=[], jsonrpc=2.0}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eth_chainId_test -->
+      </class> <!-- sedgetest.script.EthSedgeTest -->
+    </test> <!-- Sedge API Integration with Sanity Test -->
+  </suite> <!-- Test 1 and Test 3: JSON-RPC verification -->
+</testng-results>

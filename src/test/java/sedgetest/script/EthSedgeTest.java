@@ -27,7 +27,7 @@ public class EthSedgeTest extends BaseTests {
     private static final Logger logger = Logger.getLogger(EthSedgeTest.class.getName());
     EthHelper ethHelper = new EthHelper();
 
-    @Test(groups = {"functional"}, description = "Verify eth_syncing Data",dataProviderClass = EthDP.class, dataProvider = "eth_syncing",priority = 0)
+    @Test(groups = {"functional"}, description = "Ensure client synchronization completed: Verify eth_syncing Data",dataProviderClass = EthDP.class, dataProvider = "eth_syncing",priority = 0)
     public void eth_syncing_test(Map<String, Object> sTestContext ) {
         logger.info("Test to verify eth_syncing call return false");
         requestSpecBuilder.setBaseUri(Constants.url);
@@ -37,7 +37,7 @@ public class EthSedgeTest extends BaseTests {
         softAssert.assertAll();
     }
 
-    @Test(groups = {"functional"}, description = "Verify eth_blockNumber Data",dataProviderClass = EthDP.class, dataProvider = "eth_blockNumber",priority = 1)
+    @Test(groups = {"functional"}, description = "Test 1: Verify eth_blockNumber Data",dataProviderClass = EthDP.class, dataProvider = "eth_blockNumber",priority = 1)
     public void eth_blockNumber_test(Map<String, Object> sTestContext ) {
         logger.info("Test to verify eth_blockNumber");
         List<Object> list = new ArrayList<>();
@@ -58,6 +58,17 @@ public class EthSedgeTest extends BaseTests {
         logger.info("Obtain block details using the eth_getBlockByNumber endpoint");
         response = RestUtils.post(requestSpecBuilder,null,"",ethGetBlockByNumber);
         responseValidator.validateEthGetBlockByNumber(response,softAssert);
+        softAssert.assertAll();
+    }
+
+    @Test(groups = {"functional"}, description = "Test 3: Additional additional scenarios to get eth_chainId ",dataProviderClass = EthDP.class, dataProvider = "eth_syncing",priority = 2)
+    public void eth_chainId_test(Map<String, Object> sTestContext ) {
+        logger.info("Test to verify eth_chainId");
+        requestSpecBuilder.setBaseUri(Constants.url);
+        sTestContext.put("method","eth_chainId");
+        EthSyncing ethSyncing = ethHelper.ethSyncObject(sTestContext);
+        Response response = RestUtils.post(requestSpecBuilder,null,"",ethSyncing);
+        responseValidator.validateEthChainId(response,softAssert);
         softAssert.assertAll();
     }
 

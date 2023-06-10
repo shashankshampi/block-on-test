@@ -21,7 +21,7 @@ object eth_syncing {
         .asJson
         .check(status.is(200))
 //        .check(jsonPath("$.result").saveAs("result"))
-        .check(jsonPath("$.result.isSyncing").is("false"))
+        .check(jsonPath("$.result").is("false"))
       )
   }
 }

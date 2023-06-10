@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test 1 and Test 3: JSON-RPC verification" parallel="tests" thread-count="1">
+
+  <test name="Sedge API Integration with Sanity Test">
+    <parameter name="pod" value="none"/>
+    <parameter name="service" value="sedge"/>
+    <classes>
+      <class name="sedgetest.script.EthSedgeTest"/>
+    </classes>
+</test>
+  </suite>
