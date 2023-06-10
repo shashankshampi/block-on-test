@@ -23,7 +23,7 @@ jobs:
 
       - name: Install Maven
         run: |
-          sudo apt-get install -y maven=3.6.3-1~18.04.1
+#          sudo apt-get install -y maven=3.6.3-1~18.04.1
           mvn --version
 
       - name: Install Go
