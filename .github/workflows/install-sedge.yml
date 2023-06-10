@@ -13,10 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Java and Maven
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'
 
       - name: Switch to Maven 3.6.3
         run: |
