@@ -74,10 +74,10 @@ jobs:
           ls -la
           ./sedge run -p . >> $HOME/sedge.logs
 
-      - name: JSON-RPC verification
+      - name: Run Maven Clean Test
         run: mvn clean test
 
-      - name: JSON-RPC Benchmark
+      - name: Run Maven Gatling Test
         run: mvn gatling:test
 
       - name: Display sedge logs
