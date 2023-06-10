@@ -13,22 +13,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Maven
+      - name: Set up Java and Maven
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          maven-version: '3.6.3'
 
-
-      - name: Install Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: '1.18.1'
-
-      - name: check java and mvn version
+      - name: Switch to Maven 3.6.3
         run: |
-          mvn -version
-          java -version
+          wget -q https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+          tar xf apache-maven-3.6.3-bin.tar.gz
+          export PATH=$PWD/apache-maven-3.6.3/bin:$PATH
+
+      - name: Check Java version
+        run: java -version
+
+      - name: Check Maven version
+        run: mvn -version
           
 
       - name: Checkout repository
