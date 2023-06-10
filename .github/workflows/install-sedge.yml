@@ -16,8 +16,8 @@ jobs:
 
       - name: Setup Maven
         uses: actions/setup-java@v2
-          with:
-            maven-version: '3.6.3'
+        with:
+          maven-version: '3.6.3'
 
       - name: Check Java version
         run: java -version
