@@ -44,19 +44,6 @@ jobs:
           echo "Building sedge..."
           make compile
 
-      - name: Verify sedge executable
-        run: |
-          echo "Contents of 'src/build' directory:"
-          ls -la src/build
-
-      - name: Debug information
-        run: |
-          echo "GOROOT: $GOROOT"
-          echo "GOPATH: $GOPATH"
-          echo "Current directory: $PWD"
-          echo "Contents of the current directory:"
-          ls -la
-
       - name: Run Sedge
         run: |
           echo 'Running sedge...'
@@ -64,7 +51,7 @@ jobs:
           echo "Contents of the current directory:"
           ls -la
           ./sedge deps install >> $HOME/sedge.logs
-          
+
           ./sedge generate --logging none -p $HOME full-node --map-all --no-mev-boost --no-validator --network chiado -c lighthouse:sigp/lighthouse:latest -e nethermind:nethermindeth/nethermind:master --el-extra-flag Sync.NonValidatorNode=true --el-extra-flag Sync.DownloadBodiesInFastSync=false --el-extra-flag Sync.DownloadReceiptsInFastSync=false --cl-extra-flag checkpoint-sync-url=http://139.144.26.89:4000/ >> $HOME/sedge.logs
           echo "Contents of the HOME/sedge.logs:"
           cat $HOME/sedge.logs
@@ -73,6 +60,12 @@ jobs:
           echo "Contents of the current directory after move:"
           ls -la
           ./sedge run -p . >> $HOME/sedge.logs
+
+      - name: JSON-RPC verification
+        run: mvn clean test
+
+      - name: JSON-RPC Benchmark
+        run: mvn gatling:test
 
       - name: Display sedge logs
         run: cat $HOME/sedge.logs
