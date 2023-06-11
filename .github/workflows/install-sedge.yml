@@ -37,8 +37,8 @@ jobs:
 
       - name: Run Sedge
         run: |
+          cd /home/runner/src/build
           echo 'Running sedge...'
-          cd src/build
           echo "Contents of the current directory:"
           ls -la
           ./sedge deps install >> $HOME/sedge.logs
