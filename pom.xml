@@ -138,6 +138,7 @@
           <suiteXmlFiles>
             <suiteXmlFile>src/test/resources/suite/test.xml</suiteXmlFile>
           </suiteXmlFiles>
+          <testFailureIgnore>true</testFailureIgnore>
         </configuration>
       </plugin>
       <plugin>

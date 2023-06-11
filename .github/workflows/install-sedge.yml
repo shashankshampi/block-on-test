@@ -52,6 +52,9 @@ jobs:
           ls -la
           ./sedge run -p . >> $HOME/sedge.logs
 
+      - name: Pause for 3 seconds
+        run: sleep 3
+
       - name: Go back to start path
         run: |
           cd ${{ steps.set-start-path.outputs.start_path }}
