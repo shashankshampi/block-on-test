@@ -1,47 +1,29 @@
-name: Install Sedge
+name: Build and Run Sedge
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  build:
+  build-and-run:
     runs-on: ubuntu-latest
 
     steps:
-
-#      - name: Setup Maven
-#        uses: stCarolas/setup-maven@v4
-#        with:
-#          maven-version: 3.6.3
-
-      - name: Check Java version
-        run: java -version
-
-      - name: Check Maven version
-        run: mvn -version
-          
-
 #      - name: Checkout repository
 #        uses: actions/checkout@v3
 #        with:
 #          ref: main
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-
-      - name: Remove existing 'src' directory
-        run: rm -rf src
+      - name: Set start path
+        run: |
+          echo "::set-env name=START_PATH::$(pwd)"
 
       - name: Download and build Sedge
         run: |
           echo "Downloading sedge sources..."
+          cd ~
+          pwd
           git clone https://github.com/NethermindEth/sedge.git src --branch main --single-branch
           echo "Sources downloaded."
           cd src
@@ -69,34 +51,19 @@ jobs:
           ls -la
           ./sedge run -p . >> $HOME/sedge.logs
 
-      - name: Before Clone of nethermind-perf
+      - name: Go back to start path
         run: |
-          echo 'current dir'
-          pwd
-          ls -la
-          cd ../..
+          cd ${{ env.START_PATH }}
+          echo 'Start Dir'
           pwd
 
-      - name: Checkout repository
+      - name: Checkout main branch
         uses: actions/checkout@v3
         with:
           ref: main
 
-      - name: Check the Dir
-        run: |
-          pwd
-          echo 'current dir files after pwd'
-          ls -la
-          echo 'cd src/test/resources/suite/'
-          cd src/test/resources/suite/
-          ls -la
-          cat test.xml
-
       - name: Run Maven Clean Test
-        run: mvn clean test
+          run: mvn clean test
 
       - name: Run Maven Gatling Test
-        run: mvn gatling:test
-
-      - name: Display sedge logs
-        run: cat $HOME/sedge.logs
+          run: mvn gatling:test
