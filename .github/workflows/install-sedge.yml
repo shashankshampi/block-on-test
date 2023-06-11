@@ -71,11 +71,11 @@ jobs:
 
       - name: Before Clone of nethermind-perf
         run: |
-        echo 'current dir'
-        pwd
-        ls -la
-        cd ../..
-        pwd
+          echo 'current dir'
+          pwd
+          ls -la
+          cd ../..
+          pwd
 
       - name: Checkout repository
         uses: actions/checkout@v3
