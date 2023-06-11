@@ -13,17 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 'Set up archived Oracle JDK 17.0.1'
-        uses: oracle-actions/setup-java@v1
-        with:
-          website: oracle.com
-          release: 17
-          version: 17.0.1
 
-      - name: Setup Maven
-        uses: stCarolas/setup-maven@v4
-        with:
-          maven-version: 3.6.3
+#      - name: Setup Maven
+#        uses: stCarolas/setup-maven@v4
+#        with:
+#          maven-version: 3.6.3
 
       - name: Check Java version
         run: java -version
@@ -76,7 +70,7 @@ jobs:
           ./sedge run -p . >> $HOME/sedge.logs
 
       - name: Before Clone of nethermind-perf
-      run: |
+        run: |
         echo 'current dir'
         pwd
         ls -la
