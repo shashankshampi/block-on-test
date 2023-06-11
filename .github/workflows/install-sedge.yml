@@ -76,9 +76,9 @@ jobs:
           ./sedge run -p . >> $HOME/sedge.logs
 
       - name: Checkout repository
-          uses: actions/checkout@v3
-          with:
-            ref: main
+        uses: actions/checkout@v3
+        with:
+          ref: main
 
       - name: Check the Dir
         run: |
