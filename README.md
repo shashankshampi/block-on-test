@@ -70,7 +70,7 @@ For a comprehensive understanding of the assignment, please refer to the [Assign
 This repository combines the capabilities of TestNG and Gatling to verify and validate the Nethermind JSON-RPC API, while also conducting benchmarking tests. It serves as a versatile tool for evaluating the performance and functionality of the API, providing valuable insights for quality assurance.
 
 [![TestNG](https://img.shields.io/badge/TestNG-Documentation-orange)](https://testng.org/doc/) [![Gatling](https://img.shields.io/badge/Gatling-Documentation-blue)](https://gatling.io/docs/gatling/)
-[![Assignment Details](https://img.shields.io/badge/Assignment-Details-brightgreen)](https://github.com/shashankshampi/nethermind-perf/docs/Senior-QA-Engineer-Task.pdf)
+[![Senior-QA-Engineer-Task.pdf](https://img.shields.io/badge/Senior--QA--Engineer--Task.pdf-File-blue)](https://github.com/shashankshampi/nethermind-perf/blob/main/docs/Senior-QA-Engineer-Task.pdf)
 [![Nethermind Documentation](https://img.shields.io/badge/Nethermind-Documentation-blue)](https://docs.sedge.nethermind.io/docs/intro)
 [![NethermindEth/sedge](https://img.shields.io/badge/NethermindEth/sedge-Repository-brightgreen)](https://github.com/NethermindEth/sedge/tree/main)
 
@@ -107,12 +107,12 @@ To set up the repository, follow these steps:
    ```sh
    git clone git@github.com:shashankshampi/nethermind-perf.git
    ```
-2. To execute the JSON-RPC verification tests, run the following command:
+2. Execute JSON-RPC verification tests with following command:
    ```sh
    mvn clean test
    ```
 
-3. To run the JSON-RPC benchmark tests, use the following command:
+3. Execute JSON-RPC benchmark tests with command:
    ```sh
    mvn gatling:test
    ```
@@ -143,12 +143,12 @@ Download `report/test` directory and open html file in Web Browser.
 ### JSON-RPC Benchmark
 In JSON-RPC API two iteration were executed under different simulation parameters.
 1. Iteration 1 was executed with 3k request count with 100 user over 30 sec. Constant concurrency was maintained at 3.33 request/sec.
-Detail execution report can be downloaded here [Benchmark Report-Iteration-1](https://github.com/shashankshampi/nethermind-perf/tree/main/report/benchmark/gatling/sedgesimulation-20230610172743183)
+Detail execution report can be downloaded [Benchmark Report-Iteration-1](https://github.com/shashankshampi/nethermind-perf/tree/main/report/benchmark/gatling/sedgesimulation-20230610172743183)
 
 [<img alt="files/benchmark_iteration_1.png" src="files/benchmark_iteration_1.png"/>](https://github.com/shashankshampi/nethermind-perf/tree/main/report/benchmark/gatling/sedgesimulation-20230610172743183)
 
 2. Iteration 2 was executed with 60k request count with 1000 user over 60 sec. Constant concurrency was maintained at 16.67 request/sec.
-   Detail execution report can be downloaded here [Benchmark Report-Iteration-2](https://github.com/shashankshampi/nethermind-perf/tree/main/report/benchmark/gatling/sedgesimulation-20230610165444248)
+   Detail execution report can be downloaded [Benchmark Report-Iteration-2](https://github.com/shashankshampi/nethermind-perf/tree/main/report/benchmark/gatling/sedgesimulation-20230610165444248)
 
 [<img alt="files/benchmark_iteration_1.png" src="files/benchmark_iteration_2.png"/>](https://github.com/shashankshampi/nethermind-perf/tree/main/report/benchmark/gatling/sedgesimulation-20230610172743183)
 
