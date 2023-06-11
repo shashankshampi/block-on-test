@@ -33,6 +33,7 @@ public class EthSedgeTest extends io.nethermind.sedge.script.BaseTests {
         requestSpecBuilder.setBaseUri(Constants.url);
         EthSyncing ethSyncing = ethHelper.ethSyncObject(sTestContext);
         Response response = RestUtils.post(requestSpecBuilder,null,"",ethSyncing);
+        logger.info(response.prettyPrint());
         responseValidator.validateEthSync(response,softAssert);
         softAssert.assertAll();
     }
@@ -46,6 +47,7 @@ public class EthSedgeTest extends io.nethermind.sedge.script.BaseTests {
         EthBlockNumber ethBlockNumber = ethHelper.ethBlockNumberObject(sTestContext);
         logger.info("Retrieve the chain head from a synced node using the eth_blockNumber API call.");
         Response response = RestUtils.post(requestSpecBuilder,null,"",ethBlockNumber);
+        logger.info(response.prettyPrint());
         EthBlockNumberRes ethBlockNumberRes = response.as(EthBlockNumberRes.class);
         logger.info("Block Number obtained from eth_blockNumber API call: " + ethBlockNumberRes.getResult());
 
@@ -57,6 +59,7 @@ public class EthSedgeTest extends io.nethermind.sedge.script.BaseTests {
         EthGetBlockByNumber ethGetBlockByNumber = ethHelper.ethGetBlockByNumberObject(sTestContext);
         logger.info("Obtain block details using the eth_getBlockByNumber endpoint");
         response = RestUtils.post(requestSpecBuilder,null,"",ethGetBlockByNumber);
+        logger.info(response.prettyPrint());
         responseValidator.validateEthGetBlockByNumber(response,softAssert);
         softAssert.assertAll();
     }
@@ -68,6 +71,7 @@ public class EthSedgeTest extends io.nethermind.sedge.script.BaseTests {
         sTestContext.put("method","eth_chainId");
         EthSyncing ethSyncing = ethHelper.ethSyncObject(sTestContext);
         Response response = RestUtils.post(requestSpecBuilder,null,"",ethSyncing);
+        logger.info(response.prettyPrint());
         responseValidator.validateEthChainId(response,softAssert);
         softAssert.assertAll();
     }

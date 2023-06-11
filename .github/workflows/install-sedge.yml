@@ -10,10 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v3
-#        with:
-#          ref: main
 
       - name: Set start path
         id: set-start-path
@@ -24,7 +20,6 @@ jobs:
         run: |
           echo "Downloading sedge sources..."
           cd ~
-          pwd
           git clone https://github.com/NethermindEth/sedge.git src --branch main --single-branch
           echo "Sources downloaded."
           cd src
@@ -39,8 +34,6 @@ jobs:
         run: |
           cd /home/runner/src/build
           echo 'Running sedge...'
-          echo "Contents of the current directory:"
-          ls -la
           ./sedge deps install >> $HOME/sedge.logs
 
           ./sedge generate --logging none -p $HOME full-node --map-all --no-mev-boost --no-validator --network chiado -c lighthouse:sigp/lighthouse:latest -e nethermind:nethermindeth/nethermind:master --el-extra-flag Sync.NonValidatorNode=true --el-extra-flag Sync.DownloadBodiesInFastSync=false --el-extra-flag Sync.DownloadReceiptsInFastSync=false --cl-extra-flag checkpoint-sync-url=http://139.144.26.89:4000/ >> $HOME/sedge.logs
@@ -66,8 +59,11 @@ jobs:
         with:
           ref: main
 
-      - name: Run Maven Clean Test
+      - name: JSON-RPC verification
         run: mvn clean test
 
-      - name: Run Maven Gatling Test
+      - name: JSON-RPC Benchmark
         run: mvn gatling:test
+
+      - name: Display sedge logs
+        run: cat $HOME/sedge.logs

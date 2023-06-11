@@ -15,8 +15,8 @@
     },
     {
       "type": "CONSTANT_USERS_PER_SEC",
-      "users": 1,
-      "duration": 1,
+      "users": 200,
+      "duration": 5,
       "randomized": true
     },
     {
