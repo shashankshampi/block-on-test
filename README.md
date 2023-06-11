@@ -41,8 +41,8 @@
     <li>
       <a href="#assignment-report">Assignment Report</a>
       <ul>
-        <li><a href="#test">JSON-RPC verification</a></li>
-        <li><a href="#benchmark">JSON-RPC Benchmark</a></li>
+        <li><a href="#json-rpc-verification">JSON RPC verification</a></li>
+        <li><a href="#json-rpc-benchmark">JSON RPC Benchmark</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
