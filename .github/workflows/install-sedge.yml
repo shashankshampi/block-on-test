@@ -75,6 +75,13 @@ jobs:
           ls -la
           ./sedge run -p . >> $HOME/sedge.logs
 
+      - name: Check the Dir
+        run: |
+          pwd
+          cd src/test/resources/suite/
+          ls -la
+          cat test.xml
+
       - name: Run Maven Clean Test
         run: mvn clean test
 
