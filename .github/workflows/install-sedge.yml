@@ -63,7 +63,7 @@ jobs:
           ref: main
 
       - name: Run Maven Clean Test
-          run: mvn clean test
+        run: mvn clean test
 
       - name: Run Maven Gatling Test
-          run: mvn gatling:test
+        run: mvn gatling:test
