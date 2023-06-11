@@ -16,8 +16,9 @@ jobs:
 #          ref: main
 
       - name: Set start path
+        id: set-start-path
         run: |
-          echo "::set-env name=START_PATH::$(pwd)"
+            echo "::set-output name=start_path::$(pwd)"
 
       - name: Download and build Sedge
         run: |
@@ -53,7 +54,7 @@ jobs:
 
       - name: Go back to start path
         run: |
-          cd ${{ env.START_PATH }}
+          cd ${{ steps.set-start-path.outputs.start_path }}
           echo 'Start Dir'
           pwd
 
